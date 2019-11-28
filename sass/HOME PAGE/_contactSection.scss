@@ -1,0 +1,99 @@
+/////////////////////////////////
+/////////CONTACT SECTION/////////
+/////////////////////////////////
+.contact {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 15rem;
+  height: 60rem;
+
+  //CONTACT FORM
+  &__form {
+    margin-top: 10rem;
+
+    .gform_wrapper .gform_heading {
+      text-align: center;
+      margin-bottom: 5rem;
+      .gform_title {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+    }
+
+    .gfield .ginput_container {
+      input {
+        padding: 1.5rem 1.5rem !important;
+        font-size: 1.4rem !important;
+        border: 1px solid $color-dark-grey;
+      }
+      .textarea {
+        padding: 1.5rem 1.5rem !important;
+        font-size: 1.4rem !important;
+        border: 1px solid $color-dark-grey;
+      }
+    }
+
+    .gform_wrapper label.gfield_label {
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+  }
+
+  .gform_wrapper .gform_footer input[type=submit] {
+    font-size: 1.6rem;
+    background-color: $color-primary;
+    border: 1px solid $color-grey;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    padding: 1rem 3.5rem;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+
+  .gform_wrapper div.validation_error {
+    display: none;
+  }
+  .gform_wrapper li.gfield.gfield_error {
+    border: none;
+    background-color: transparent;
+
+    .validation_message {
+      font-size: 1.3rem;
+    }
+  }
+
+  .gform_wrapper .field_description_below .gfield_description {
+    padding: 0;
+  }
+
+  .gform_confirmation_wrapper .gform_confirmation_message {
+    font-size: 3rem;
+    text-align: center;
+    color: $color-secondary;
+  }
+
+  //SOCIAL ICONS
+  &__social {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon,
+    &__icon:visited {
+      margin: 0 1.5rem;
+      i  {
+        color: $color-dark-grey;
+        font-size: 3rem;
+        transition: .3s;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/*!
+Theme Name: tapa2bal
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: tapa2bal
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@import 'base';
+@import "header";
+@import "devenirMembre";
+@import "footer";
+
+//HOMEPAGE SCSS
+@import "HOME PAGE/mainSection";
+@import "HOME PAGE/conceptSection";
+@import "HOME PAGE/statisticSection";
+@import "HOME PAGE/donationSection";
+@import "HOME PAGE/FAQ&PartnersSection";
+@import "HOME PAGE/contactSection";
+

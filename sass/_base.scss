@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+
+
+//VARIABLES
+$color-primary: #A7E47C;
+$color-secondary: #5AC5D4;
+$color-white: #e9ecef;
+$color-lighter-grey: #f8f9fa;
+$color-grey: #868e96;
+$color-medium-grey: #495057;
+$color-dark-grey: #343a40;
+$color-grey-2: #E6E6E4;
+
+
+//RESPONSIVE DESIGN MIXIN
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px:      Phone
+600 - 782px:    Tablet portrait small
+782 - 900px:    Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where our normal styles apply
+2100px +        Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-port-small
+- tab-land
+- big-desktop
+
+
+1em = 16px;
+em for 600px is (600/16) = 37.5em
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };    //600px;
+  }
+
+  @if $breakpoint == tab-port-small  {
+    @media only screen and (max-width: 48.875em) { @content };     //782px;
+  }
+
+  @if $breakpoint == tab-port  {
+    @media only screen and (max-width: 56.25em) { @content };     //900px;
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == small-desktop {
+    @media only screen and (max-width: 110em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 131.25em) { @content };    //2100px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a,a:visited {
+  text-decoration: none;
+}
+
+
+//TYPOGRAPHY
+html {
+  //This define what 1rem is
+  font-size: 62.5%;   //1rem = 10px; 10px/16px = 62.5%
+  font-family: 'Open Sans', 'Roboto';
+  scroll-behavior: smooth;
+
+  // RESPONSIVE MEDIA
+  @include respond(tab-port) {
+    font-size: 56.25%;   //1rem = 9px, 9/16 = 56.25%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;     //1rem = 12, 12/16 = 75%
+  }
+}
+
+h1 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+//CONTAINER SECTION
+.container{
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond(big-desktop) {
+    max-width: 115rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-land) {
+    max-width: 90rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include  respond(tab-port) {
+    max-width: 85rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-port-small) {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+//ADMIN UPPER BAR
+.logged-in {
+  .site-header {
+    top: calc(3.2rem - 9.5rem);
+
+    @include respond(big-desktop) {
+      top: calc(2.6rem - 9.5rem);
+    }
+
+    @include respond(tab-land) {
+      top: calc(3.2rem - 7rem);
+    }
+
+    @include respond(tab-port-small) {
+      top: calc(5rem - 7rem);
+    }
+  }
+}
+
+#wpadminbar {
+  @include respond(phone) {
+    position: fixed;
+  }
+}
+
+
+
+.button {
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1.5rem 4rem;
+  text-align: center;
+
+  transition: .3s;
+}
+
+.button_primary,
+.button_primary:visited {
+  background-color: $color-primary;
+  color: $color-dark-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.button_secondary,
+.button_secondary:visited {
+  background-color: $color-secondary;
+  color: $color-dark-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+  }
+}

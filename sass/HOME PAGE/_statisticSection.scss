@@ -1,0 +1,73 @@
+///////////////////////////////
+/////STATISTIC SECTION/////////
+///////////////////////////////
+.statistic_main {
+  position: relative;
+  width: 100%;
+  height: 73rem;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  text-align: center;
+
+  &__content {
+    position: relative;
+    top: 8rem;
+
+    &__title {
+      color: $color-lighter-grey;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    &__info-a,
+    &__info-b {
+      color: $color-lighter-grey;
+      font-size: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    &__info-b {
+      margin-top: 4rem;
+    }
+
+    &__button,
+    &__button:visited {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__counter {
+    position: relative;
+    top: 8rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__voyages,
+    &__membres,
+    &__authenticite {
+      h3 {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        font-size: 4rem;
+        font-weight: 400;
+        color: $color-lighter-grey;
+      }
+
+      span {
+        font-size: 2.5rem;
+        color: $color-lighter-grey;
+      }
+    }
+    .statistic_main__counter__authenticite h3:after {
+      content: '%';
+      font-size: 4rem;
+      font-weight: 400;
+      color: $color-lighter-grey;
+    }
+  }
+}

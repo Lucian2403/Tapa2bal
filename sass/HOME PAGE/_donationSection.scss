@@ -1,0 +1,136 @@
+///////////////////////////////
+/////DONATION SECTION/////////
+///////////////////////////////
+.donation {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  //DONATION LEFT
+
+  &__left {
+    height: 52.5rem;
+    margin-right: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    &__title {
+      position: relative;
+      top: 12rem;
+      font-size: 4rem;
+    }
+
+    p {
+      position: relative;
+      top: 3rem;
+      font-size: 1.4rem;
+    }
+
+    &__btn,
+    &__btn:visited {
+      position: relative;
+      top: 7rem;
+      padding: 1rem 2rem;
+    }
+
+    &__box {
+      position: relative;
+      width: 100%;
+      height: 17rem;
+      background-color: $color-primary;
+      border-radius: 1.5rem;
+
+      transition: .4s;
+
+      &--text {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+        text-align: center;
+        opacity: .6;
+        font-weight: 400;
+
+        transition: .4s;
+
+      }
+      &--hover-text {
+        display: none;
+        opacity: 0;
+
+        transition: .4s;
+      }
+      &--hover-btn {
+        display: none;
+      }
+
+      //BOX HOVER
+      &:hover {
+        background-color: $color-secondary;
+
+
+        .donation__left__box--text {
+          display: none;
+        }
+        .donation__left__box--hover-text {
+          display: inline-block;
+          position: absolute;
+          top: 30%;
+          transform: translateY(-50%);
+          font-size: 3rem;
+          text-align: center;
+          opacity: .6;
+          font-weight: 400;
+        }
+
+        .donation__left__box--hover-btn,
+        .donation__left__box--hover-btn:visited {
+          color: $color-dark-grey;
+          border: 1px solid $color-dark-grey;
+          border-radius: .6rem;
+          padding: 1rem 1.5rem;
+          display: inline-block;
+          position: absolute;
+          top: 63%;
+          right: 50%;
+          transform: translateX(50%);
+
+          &:hover {
+            background-color: $color-dark-grey;
+            color: $color-lighter-grey;
+          }
+        }
+      }
+    }
+  }
+
+  //CONTENT RIGHT
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 53rem;
+
+    &__img-a {
+      height: 100%;
+      img {
+        width: 30rem;
+        height: 98.7%;
+        object-fit: cover;
+      }
+    }
+
+    &__small {
+      height: 100%;
+      &--img-b {
+      }
+      &--img-c {
+        //nothing
+      }
+    }
+  }
+}

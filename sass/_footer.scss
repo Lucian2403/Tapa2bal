@@ -1,0 +1,78 @@
+.site-footer {
+  height: 48rem;
+  background-color: $color-secondary;
+}
+
+.site-info {
+  position: relative;
+  top: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 100rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  //SITEMAP
+  &__sitemap {
+    &__text {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .menu-item {
+    margin-bottom: 1rem;
+    margin-right: .5rem;
+    a,a:visited {
+      font-size: 1.6rem;
+      color: $color-dark-grey;
+
+      &:hover {
+        color: $color-primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  //ADDRESS
+  &__address {
+    align-self: start;
+    &__text {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    &__info {
+      font-size: 1.6rem;
+      color: $color-dark-grey;
+      line-height: 3rem;
+    }
+  }
+}
+
+/////TERMS FOOTER/////
+.footer_info {
+  display: block;
+  max-width: 100rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  text-align: center;
+
+  a,a:visited {
+    font-size: 1.4rem;
+    color: $color-dark-grey;
+    &:hover {
+      color:$color-primary
+    }
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    font-weight: 300;
+    display: block;
+  }
+}
